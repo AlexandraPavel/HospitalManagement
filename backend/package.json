@@ -1,0 +1,35 @@
+{
+  "name": "hospitalmanagement",
+  "version": "1.0.0",
+  "description": "Node.js and MySql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandraPavel/HospitalManagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandraPavel/HospitalManagement/issues"
+  },
+  "homepage": "https://github.com/AlexandraPavel/HospitalManagement#readme",
+  "dependencies": {
+    "acl": "^0.4.11",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
