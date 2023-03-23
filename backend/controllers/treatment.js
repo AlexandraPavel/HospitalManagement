@@ -14,15 +14,15 @@ const postTreatment = async (req, res) => {
 const getTreatment = async (req, res) => {
   if ("name" in req.body) {
     try {
-      const users = await treatmentModel.find({ name: req.body.name });
-      res.send(users);
+      const treatments = await treatmentModel.find({ name: req.body.name });
+      res.send(treatments);
     } catch (error) {
         return res.status(404).send();
     }
   } else if ("email" in req.body) {
     try {
-      const users = await treatmentModel.find({ email: req.body.email });
-      res.send(users);
+      const treatments = await treatmentModel.find({ email: req.body.email });
+      res.send(treatments);
     } catch (error) {
         return res.status(404).send();
     }
@@ -33,8 +33,8 @@ const getTreatmentById = async (req, res) => {
   const _id = req.params.id;
 
   try {
-    const user = await treatmentModel.findById(_id);
-    if (!user) {
+    const treatment = await treatmentModel.findById(_id);
+    if (!treatment) {
       return res.status(404).send();
     }
     res.send(user);
@@ -44,13 +44,13 @@ const getTreatmentById = async (req, res) => {
 };
 
 const getTreatments = async (req, res) => {
-  const users = await treatmentModel.find();
-  res.send(users);
+  const treatments = await treatmentModel.find();
+  res.send(treatments);
 };
 
 const patchTreatment = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ["roles", "departments"];
+  const allowedUpdates = ["idPatient"];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
@@ -81,7 +81,7 @@ const deleteTreatment = async (req, res) => {
       await treatmentModel.deleteOne({ name: req.body.name });
       res.send({ success: true });
     } catch (error) {
-      res.send({ error: `Users not found` });
+      res.send({ error: `Treatment not found` });
     }
   } else if ("email" in req.body) {
     try {

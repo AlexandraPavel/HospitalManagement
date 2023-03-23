@@ -39,7 +39,8 @@ INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test'
 
 Clusterul bazei de date e hostata pe site-ul: https://scalegrid.io/,
 fiind o platforma usor accesibila pentru a crea o baza de date in urma
-unui research indelungat.
+unui research indelungat. Am pus IP-ul 0.0.0.0/0  pentru a avea permisiune oricine
+sa se conecteze la baza de date.
 
 Am folosit un MVC pentru dezvoltarea aplicatiei.
 Pentru baza de date am cerut un certificat SSL pentru securitatea sesiunii.

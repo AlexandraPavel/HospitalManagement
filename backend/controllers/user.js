@@ -50,7 +50,7 @@ const getUsers = async (req, res) => {
 
 const patchUser = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ["roles", "departments"];
+  const allowedUpdates = ["role", "department", "name", "phone", "address"];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
